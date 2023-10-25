@@ -34,13 +34,13 @@ public class Main {
         listMonths.add(month10);
         listMonths.add(month11);
 
-        //Añadir mes de Agosot en su lugar correspondiente
-        //listMonths.add(7, month12);
+        System.out.println("Añadir mes de Agosot en su lugar correspondiente");
+        listMonths.add(7, month12);
 
-        //Llamamos al metodo para printar con bucle for
-        //printList(listMonths);
+        System.out.println("Llamamos al metodo para printar con bucle for");
+        printList(listMonths);
 
-        //Montamos el HashSet
+
         HashSet<String> hashSetMonths = new HashSet<String>();
         hashSetMonths.add("January");
         hashSetMonths.add("February");
@@ -56,16 +56,16 @@ public class Main {
         hashSetMonths.add("December");
         hashSetMonths.add("February");
 
-        //Printa la lista sin repetir el último Stringque hemos añadido que està repetido.
+        System.out.println("Ahora printamos con HashSet");
         System.out.println(hashSetMonths);
 
-        //Printar ArrayList con Iterador
-       // printListIterator(listMonths);
+        System.out.println("Ahora listamos la lista con iterador");
+       printListIterator(listMonths);
 
 
 
     }
-    //Método para recorrer ArrayList con bucle for
+
     public static void printList (ArrayList <Month> listMonths){
 
         int i = 0;
@@ -75,7 +75,7 @@ public class Main {
         }
 
     }
-    //Método para iterar ArrayList
+
     public static void printListIterator (ArrayList<Month>listMonths) {
 
         Iterator it = listMonths.iterator();

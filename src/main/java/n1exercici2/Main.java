@@ -7,7 +7,6 @@ import java.util.ListIterator;
 public class Main {
     public static void main(String[] args) {
 
-        //Lista <Integer>
         ArrayList<Integer> listNumbers = new ArrayList<Integer>();
 
         listNumbers.add(1);
@@ -15,17 +14,14 @@ public class Main {
         listNumbers.add(3);
         listNumbers.add(4);
 
-        //Declaramos segundo Array para ñadir primera en orden inverso*/
         List<Integer> reverseList = new ArrayList<Integer>();
 
-        //Llamamos método para añadir items en la lista inversa
         addListReverseIterator(listNumbers,reverseList);
 
-        //Llamamos método para printar lista invertida
 
+        System.out.println("Printa la lista inversa");
         printReverseList (reverseList);
     }
-    //Método para añadir a otra List con los elementos de la primera en orden inverso
     public static void addListReverse (List<Integer> listNumbers, List<Integer>reverseList) {
 
         int number = 0;

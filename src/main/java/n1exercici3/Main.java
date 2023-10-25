@@ -14,11 +14,7 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-				/*//hacemos juego
-        //metodo para leer archivo paises
-        //para leer el pais lo hacemos con while ;String[]countryText = linea.split("") => cogemos el hashMap y le ponemos lo que hay en el archivo .put(ponesPrimera posicion[0],posicion[1])=>retoran el hasMap
-        //Metodo para jugar y añadir respuesta en el text
-        //creamos nuevo juego (por parametros pedimos user name y el metodo de leer archivo) => y aqui escribimos el score en el archivo*/
+
         HashMap countriesMap = chargeFileHashMap();
 
         menu(countriesMap);
@@ -30,7 +26,7 @@ public class Main {
         int score =0;
 
         do {
-            eleccio = pideInt("Quina opció vols escollir:\n0.-Sortir del joc\n1.-Començar partida\n2-Tornar a jugar");
+            eleccio = pideInt("Quina opció vols escollir:\n0.-Sortir del joc\n1.-Començar partida");
 
             switch (eleccio) {
 
@@ -43,14 +39,12 @@ public class Main {
                     System.out.println("Tú puntuación es de: "+score+" puntos.");
 
                     break;
-                case 2:
-                    //	playAgain()
                 default:
                     System.out.println("No has escollit una opció correcta");
-
+                    break;
             }
 
-        } while (eleccio <=2 && eleccio>0);
+        } while (seguir);
 
     }
 
@@ -59,7 +53,7 @@ public class Main {
         int score=0;
 
         for(int i=0;i<3;i++) {
-            //for(int i=0;i<10;i++) {
+
             randomCountry=randomCountry(countriesMap);
             capital =pideString ("Dime la capital de " + randomCountry);
             if(capital.equalsIgnoreCase((countriesMap.get(randomCountry)))){
@@ -81,7 +75,7 @@ public class Main {
         FileReader fr = null;
         BufferedReader br = null;
 
-        try (Scanner scanner = new Scanner(new File("/Users/abarcia/eclipse-workspace/S1_03_COLLECTIONS/src/n1exercici3/countries.txt"))) {
+        try (Scanner scanner = new Scanner(new File("/Users/abarcia/IT ACADEMY/SPRING 1_JAVA_LENGUAGE/S1_03_JAVA_COLLECTIONS/src/main/java/n1exercici3/countries.txt"))) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] parts = line.split(" ");
@@ -119,7 +113,6 @@ public class Main {
         }
 
         Object randomValue = values [generator.nextInt(values.length)];
-        //System.out.println(randomValue);
 
         randomCountry = randomValue.toString();
 
@@ -133,7 +126,7 @@ public class Main {
 
         try{
 
-            fichero= new FileWriter("/Users/abarcia/eclipse-workspace/S1_03_COLLECTIONS/src/n1exercici3/gamers.txt");
+            fichero= new FileWriter("/Users/abarcia/IT ACADEMY/SPRING 1_JAVA_LENGUAGE/S1_03_JAVA_COLLECTIONS/src/main/java/n1exercici3/gamers.txt");
             pw = new PrintWriter(fichero);
             for (int i = 0; i < 1; i++)
                 pw.println(nickName + " "+score+" puntos") ;
