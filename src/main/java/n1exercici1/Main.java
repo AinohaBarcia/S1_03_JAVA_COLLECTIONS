@@ -41,11 +41,11 @@ public class Main {
         printList(listMonths);
         System.out.println();
         System.out.println("Creamos el HashSet con el mes de febrero duplicado");
-        String[] months ={"January","February","March","April","May","June","July","August",
-                         "September","October","November","December","February"};
-        HashSet<String> hashSetMonths = new HashSet<String>();
-
-        for (String month : months) {
+        /*String[] months ={"January","February","March","April","May","June","July","August",
+                         "September","October","November","December","February"};*/
+        HashSet<Month> hashSetMonths = new HashSet<Month>();
+        listMonths.add(month2);
+        for (Month month : listMonths) {
             hashSetMonths.add(month);
         }
 
