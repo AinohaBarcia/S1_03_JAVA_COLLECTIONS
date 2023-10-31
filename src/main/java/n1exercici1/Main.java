@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
-        //ArrayList
+        System.out.println("Declaramos ArrayList Months, sin el mes de Agosto");
         ArrayList<Month> listMonths = new ArrayList<Month>();
 
         Month month1 = new Month("January");
@@ -34,39 +34,31 @@ public class Main {
         listMonths.add(month10);
         listMonths.add(month11);
 
-        System.out.println("Añadir mes de Agosot en su lugar correspondiente");
+        System.out.println("Añadir mes de Agosto en su lugar correspondiente");
         listMonths.add(7, month12);
-
+        System.out.println();
         System.out.println("Llamamos al metodo para printar con bucle for");
         printList(listMonths);
-
-
+        System.out.println();
+        System.out.println("Creamos el HashSet con el mes de febrero duplicado");
+        String[] months ={"January","February","March","April","May","June","July","August",
+                         "September","October","November","December","February"};
         HashSet<String> hashSetMonths = new HashSet<String>();
-        hashSetMonths.add("January");
-        hashSetMonths.add("February");
-        hashSetMonths.add("March");
-        hashSetMonths.add("April");
-        hashSetMonths.add("May");
-        hashSetMonths.add("June");
-        hashSetMonths.add("July");
-        hashSetMonths.add("August");
-        hashSetMonths.add("September");
-        hashSetMonths.add("October");
-        hashSetMonths.add("November");
-        hashSetMonths.add("December");
-        hashSetMonths.add("February");
 
-        System.out.println("Ahora printamos con HashSet");
+        for (String month : months) {
+            hashSetMonths.add(month);
+        }
+
+        System.out.println("Ahora printamos con HashSet y el mes de febrero no nos lo printará");
         System.out.println(hashSetMonths);
-
+        System.out.println();
         System.out.println("Ahora listamos la lista con iterador");
-       printListIterator(listMonths);
+         printListIterator(listMonths);
 
 
 
     }
-
-    public static void printList (ArrayList <Month> listMonths){
+    private static void printList (ArrayList <Month> listMonths){
 
         int i = 0;
 
@@ -76,7 +68,7 @@ public class Main {
 
     }
 
-    public static void printListIterator (ArrayList<Month>listMonths) {
+    private static void printListIterator (ArrayList<Month>listMonths) {
 
         Iterator it = listMonths.iterator();
 

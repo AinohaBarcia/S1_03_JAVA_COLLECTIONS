@@ -75,7 +75,7 @@ public class Main {
         FileReader fr = null;
         BufferedReader br = null;
 
-        try (Scanner scanner = new Scanner(new File("/Users/abarcia/IT ACADEMY/SPRING 1_JAVA_LENGUAGE/S1_03_JAVA_COLLECTIONS/src/main/java/n1exercici3/countries.txt"))) {
+        try (Scanner scanner = new Scanner(new File("/src/main/java/n1exercici3/countries.txt"))) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] parts = line.split(" ");
@@ -126,7 +126,7 @@ public class Main {
 
         try{
 
-            fichero= new FileWriter("/Users/abarcia/IT ACADEMY/SPRING 1_JAVA_LENGUAGE/S1_03_JAVA_COLLECTIONS/src/main/java/n1exercici3/gamers.txt");
+            fichero= new FileWriter("/src/main/java/n1exercici3/gamers.txt");
             pw = new PrintWriter(fichero);
             for (int i = 0; i < 1; i++)
                 pw.println(nickName + " "+score+" puntos") ;

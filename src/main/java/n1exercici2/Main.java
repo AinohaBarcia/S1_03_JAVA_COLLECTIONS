@@ -1,5 +1,7 @@
 package n1exercici2;
 
+import jdk.dynalink.linker.support.CompositeGuardingDynamicLinker;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -14,25 +16,20 @@ public class Main {
         listNumbers.add(3);
         listNumbers.add(4);
 
+        System.out.println("Vamos a printar la lista original");
+        printListNumbers(listNumbers);
+
         List<Integer> reverseList = new ArrayList<Integer>();
 
         addListReverseIterator(listNumbers,reverseList);
 
-
-        System.out.println("Printa la lista inversa");
+        System.out.println("Ahora mostramos la lista inversa");
         printReverseList (reverseList);
     }
-    public static void addListReverse (List<Integer> listNumbers, List<Integer>reverseList) {
-
-        int number = 0;
-
-        for(int i=listNumbers.size();i>0;i--) {
-
-            number = listNumbers.get(i-1);
-            reverseList.add(number);
+    public static void printListNumbers (ArrayList<Integer> listNumbers){
+        for (Integer elemento : listNumbers) {
+            System.out.println(elemento);
         }
-        System.out.println(reverseList);
-
     }
     public static void addListReverseIterator (List<Integer> listNumbers, List<Integer>reverseList) {
         ListIterator it = listNumbers.listIterator(listNumbers.size());
